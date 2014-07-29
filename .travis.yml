@@ -1,1 +1,6 @@
-c8fff3f1c8e8b8104d7afe23467a48850809233e
+language: php
+php:
+  - "5.5"
+  - "5.4"
+install:
+  - composer install
