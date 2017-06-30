@@ -1,11 +1,11 @@
 # Symfony Command Cron
 
-![build success](https://travis-ci.org/Aeolun/symfony-command-cron.svg?branch=master)
-![code quality](https://scrutinizer-ci.com/g/Aeolun/symfony-command-cron/badges/quality-score.png?b=master) 
-![Latest Stable Version](https://poser.pugx.org/aeolun/symfony-command-cron/v/stable.svg)
-![Total Downloads](https://poser.pugx.org/aeolun/symfony-command-cron/downloads.svg)
-![Latest Unstable Version](https://poser.pugx.org/aeolun/symfony-command-cron/v/unstable.svg)
-![License](https://poser.pugx.org/aeolun/symfony-command-cron/license.svg)
+[![build success](https://travis-ci.org/Aeolun/symfony-command-cron.svg?branch=master)](https://travis-ci.org/Aeolun/symfony-command-cron)
+[![code quality](https://scrutinizer-ci.com/g/Aeolun/symfony-command-cron/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Aeolun/symfony-command-cron)
+[![Latest Stable Version](https://poser.pugx.org/aeolun/symfony-command-cron/v/stable.svg)](https://packagist.org/packages/aeolun/symfony-command-cron) 
+[![Total Downloads](https://poser.pugx.org/aeolun/symfony-command-cron/downloads.svg)](https://packagist.org/packages/aeolun/symfony-command-cron) 
+[![Latest Unstable Version](https://poser.pugx.org/aeolun/symfony-command-cron/v/unstable.svg)](https://packagist.org/packages/aeolun/symfony-command-cron) 
+[![License](https://poser.pugx.org/aeolun/symfony-command-cron/license.svg)](https://packagist.org/packages/aeolun/symfony-command-cron)
 
 This package functions almost the same as a normal Symfony console application, except that the commands to run are not determined manually (e.g. command line parameter), but by a file with a cron syntax that can be saved with your application in the repository.
 
