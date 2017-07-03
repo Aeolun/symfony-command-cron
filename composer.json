@@ -10,8 +10,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "symfony/console": "^3",
-        "symfony/process": "^3",
+        "symfony/console": "^2 || ^3",
+        "symfony/process": "^2 || ^3",
         "mtdowling/cron-expression": "^1"
     },
     "require-dev": {
