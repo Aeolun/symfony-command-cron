@@ -17,6 +17,7 @@ class CronApplication
     var $expressions = [];
     var $application = null;
     private $parallelScript = null;
+    private $phpBin = null;
 
     function __construct($cronFile, $parallelScript = null, $name = 'UNKNOWN', $version = 'UNKNOWN')
     {
@@ -37,6 +38,12 @@ class CronApplication
 
         $this->application = new Application($name, $version);
         $this->parallelScript = $parallelScript;
+        $this->phpBin = PHP_BINARY;
+    }
+
+    function setPhpBin($phpBin)
+    {
+        $this->phpBin = $phpBin;
     }
 
     function add(Command $command)
@@ -126,9 +133,7 @@ class CronApplication
 
         $processes = [];
         foreach ($commands as $command) {
-            $phpBin = PHP_BINDIR . '/php';
-
-            $process = new Process($phpBin . ' ' . $this->parallelScript . ' ' . $command);
+            $process = new Process($this->phpBin . ' ' . $this->parallelScript . ' ' . $command);
             $output->writeln('Starting ' . $process->getCommandLine());
 
             $process->start();
@@ -140,7 +145,7 @@ class CronApplication
             foreach ($processes as $process) {
                 /** @var Process $process */
                 if ($process->isRunning()) {
-                    $output->writeln($process->getCommandLine() . ' still running under ' . $process->getPid());
+                    $output->writeln($process->getCommandLine() . ' still running as pid ' . $process->getPid());
                     $close = false;
                 } else {
                     $output->write($process->getErrorOutput() . "\n" . $process->getOutput());
@@ -149,7 +154,7 @@ class CronApplication
             if ($close) {
                 break;
             }
-            sleep(1);
+            sleep(60);
         }
 
         return true;
